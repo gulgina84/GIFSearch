@@ -1,70 +1,73 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 1. How to start the progject
+1. Go to [GIFHY API](https://developers.giphy.com/docs/api#quick-start-guide) get a beta API key, creat .env file and copy your API key in it, see `example.env` file.
+2. Run following commands in your terminal to install all the dependencies
+```
+cd geofy
+npm install
+```
+3. run following commands in your terminal to start the server
+```
+npm run start:backend
+npm start
+```
 
-## Available Scripts
+4. run test
+ ```npm test```
 
-In the project directory, you can run:
+5. build
+ `npm run build`
 
-### `npm start`
+### 3. How to make this project production ready?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+GIPHY API production requirements:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  1. All apps that use the GIPHY API to conspicuously display "Powered By GIPHY" attribution marks where the API is utilized.You can find [approved official logo marks](https://media.giphy.com/giphy-attribution-marks.zip) here. You may also be asked to provide screenshots or a video of app during the application process.
 
-### `npm test`
+  2. Get a production API Key
+  When you create an app, you will receive a rate limited beta key, which we advise you to use in development. These beta keys are rate limited to a maximum of 42 search requests an hour and 1000 search requests a day. We highly recommend when your app is ready to go live with higher traffic that you apply to upgrade your beta key to production.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  3. Masking API Key(dones)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Road map
+##### Understanding the requirements
 
-### `npm run eject`
+1. Create a page that shows GIFs based on a search term entered by the user.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Your page should show gifs for two additional "adjacent" search terms. Note: The word "adjacent" in this context is purposely vague. Feel free to decide how to determine two additional search terms based on the search term entered by the user.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Respond to the user’s input without the user having to press a "Search" button.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Always return 3 results per search term, or 0 results if there are less than 3 available per search term
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. Markdown file to specify how to build, test and start the server on port 8080. Add section what improvements you would make, if any, to make it "production-ready".
 
-## Learn More
+#### Evaluation:
+1. Meet all requirements
+2. Clear instructions
+3. Easy to read the code and test the code
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+##### MVP
+1. Build a search bar that user can type words
+2. Read API documentation and test API keys
+3. Make search bar display gif below the search bar(always 3 results)
+4. Error handling/No results indication
+5. Write tests
+6. Adjacent words, Utlizing public API https://www.datamuse.com/api/
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### UX Optimization
+1. Show Gifs if results not found
+2. Restrict Gif content rating for creating positive experience
 
-### Code Splitting
+#### Optimization
+1. Basic styling
+2. Mask API Key in the url by creating a backend server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Why no question?
+1. Simple task, show ownership and think independently
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Retrospective
+1. Need more test suite
